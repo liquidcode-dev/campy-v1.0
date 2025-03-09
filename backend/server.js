@@ -67,7 +67,7 @@ app.get('/callback', async (req, res) => {
       const accessToken = response.data.access_token;
   
       // 🎯 フロントエンドにリダイレクトして、トークンを渡す
-      res.redirect(`http://localhost:5173/playlists?access_token=${accessToken}`);
+      res.redirect(`${ process.env.FRONTEND_URL }/playlists?access_token=${accessToken}`);
   
     } catch (error) {
       console.error(error);
