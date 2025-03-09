@@ -7,7 +7,11 @@ const searchBandcamp = require('./scrapeBandcamp');
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-app.use(cors());
+app.use(cors({
+  origin: FRONTEND_URL, 
+  methods: "GET,POST",
+  allowedHeaders: "Content-Type,Authorization"
+}));
 app.use(express.json());
 
 const getSpotifyAccessToken = async () => {
@@ -179,5 +183,5 @@ app.get('/search-bandcamp', async (req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`Server running on http://localhost:${PORT}`);
+  console.log(`Server running on port:${PORT}`);
 });
