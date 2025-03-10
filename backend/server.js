@@ -73,7 +73,7 @@ app.get('/callback', async (req, res) => {
   
       // 🎯 フロントエンドにリダイレクトして、トークンを渡す
       res.redirect(`${ FRONTEND_URL }/playlists?access_token=${accessToken}`);
-  
+      console.log(`/callback レスポンス：${ FRONTEND_URL }/playlists?access_token=${accessToken}`)
     } catch (error) {
       console.error(error);
       res.status(500).json({ error: 'Failed to get access token' });
@@ -83,8 +83,9 @@ app.get('/callback', async (req, res) => {
 
 // 🎵 ③ プレイリスト一覧を取得
 app.get('/playlists', async (req, res) => {
+  console.log("/playlists へのアクセス！");
   const accessToken = req.headers.authorization?.split(' ')[1];
-
+  console.log(`accessToken: ${accessToken}`);
   if (!accessToken) {
     return res.status(401).json({ error: 'Unauthorized' });
   }
@@ -99,7 +100,7 @@ app.get('/playlists', async (req, res) => {
       name: playlist.name,
       imageUrl: playlist.images[0]?.url || '',
     }));
-
+    console.log(`playlistsJson:${playlists}`);
     res.json(playlists);
   } catch (error) {
     console.error('❌ プレイリスト取得エラー:', error.response?.data || error.message);
