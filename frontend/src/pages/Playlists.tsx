@@ -30,7 +30,9 @@ const Playlists = () => {
       return;
     }
 
+    console.log("accessToken:" + accessToken);
     localStorage.setItem("spotify_access_token", accessToken);
+    console.log( localStorage.getItem("spotify_access_token"));
 
     axios
       .get(`${import.meta.env.VITE_BACKEND_URL}/playlists`, {
