@@ -9,7 +9,7 @@ async function searchBandcamp(artist, title) {
 
   // 🎯 半角スペースを「+」に置き換える
   const formattedArtist = artist.replace(/ /g, '+');
-  const formattedTitle = title.replace(/ /g, '+');
+  const formattedTitle = title.replace(/ - Original Mix/g, '').replace(/ /g, '+');
 
   // 🎯 Bandcampの検索URLを修正
   const query = `${formattedArtist}+${formattedTitle}`;

@@ -103,9 +103,9 @@ const Tracks = () => {
 
           <Grid container spacing={2} justifyContent="center" mt={3}>
             {tracks.map((track) => (
-              <Grid size={{ xs:12, sm:6, md:4 }} key={track.title}>
-                <Card sx={{ width: "200px", backgroundColor: "#1f1f1f" }}>
-                  <CardMedia component="img" height="200" image={track.imageUrl} alt={track.title} />
+              <Grid size={{ xs:3, sm:3, md:3 }} key={track.title}>
+                <Card sx={{ margin: "0 auto", width: "100%", backgroundColor: "#1f1f1f" }}>
+                  <CardMedia component="img" image={track.imageUrl} alt={track.title} />
                   <CardContent sx={{ textAlign: "center" }}>
                     <TrackInfo>{track.title}</TrackInfo>
                     <TrackInfo>{track.artist}</TrackInfo>

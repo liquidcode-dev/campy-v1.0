@@ -76,9 +76,9 @@ const SearchResults = () => {
 
       <Grid container spacing={2} justifyContent="center" mt={5}>
         {results.map((result, index) => (
-          <Grid size={{ xs:12, sm:6, md:4 }} key={index}>
-            <Card sx={{ width: "200px", backgroundColor: "#1f1f1f" }}>
-              <CardMedia component="img" height="200" image={result.imageUrl} alt={result.title} />
+          <Grid size={{ xs:3, sm:3, md:3 }} key={index}>
+            <Card sx={{ margin: "0 auto", width: "100%", backgroundColor: "#1f1f1f" }}>
+              <CardMedia component="img" image={result.imageUrl} alt={result.title} />
               <CardContent sx={{ textAlign: "center" }}>
               <TrackInfo>{result.title}</TrackInfo>
               <TrackInfo>{result.artist}</TrackInfo>

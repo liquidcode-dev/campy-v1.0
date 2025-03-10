@@ -31,9 +31,7 @@ const Playlists = () => {
       return;
     }
 
-    console.log("accessToken:" + accessToken);
     localStorage.setItem("spotify_access_token", accessToken);
-    console.log( localStorage.getItem("spotify_access_token"));
 
     axios
       .get(`${import.meta.env.VITE_BACKEND_URL}/playlists`, {
@@ -70,9 +68,9 @@ const Playlists = () => {
       {!loading && !error && playlists.length > 0 && (
         <Grid container spacing={2} justifyContent="center" mt={5}>
           {playlists.map((playlist) => (
-            <Grid size={{xs:8, sm:3, md:3 }} key={playlist.id}>
-              <Card onClick={() => navigate(`/tracks/${playlist.id}`)} sx={{ cursor: "pointer", width: "200px", backgroundColor: "#1f1f1f" }}>
-                <CardMedia component="img" height="200" image={playlist.imageUrl} alt={playlist.name} />
+            <Grid size={{xs:3, sm:3, md:3, lg:3 }} key={playlist.id}>
+              <Card onClick={() => navigate(`/tracks/${playlist.id}`)} sx={{ margin: "0 auto", cursor: "pointer", width: "100%", backgroundColor: "#1f1f1f" }}>
+                <CardMedia component="img" image={playlist.imageUrl} alt={playlist.name} />
                 <CardContent>
                   <PlaylistTitle variant="caption">
                     {playlist.name}
