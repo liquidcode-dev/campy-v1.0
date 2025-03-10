@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { useSearchParams, useNavigate } from "react-router-dom";
 import axios from "axios";
-//import  Grid  from "@mui/material/Grid2";
 import { Grid, Card, CardMedia, CardContent, Typography, CircularProgress, Alert, styled } from "@mui/material";
 
 const PlaylistTitle = styled(Typography)(() => ({

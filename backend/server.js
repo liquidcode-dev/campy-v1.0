@@ -6,6 +6,7 @@ const searchBandcamp = require('./scrapeBandcamp');
 
 const app = express();
 const PORT = process.env.PORT || 3001;
+const FRONTEND_URL = process.env.FRONTEND_URL || "http://localhost:5173";
 
 app.use(cors({
   origin: FRONTEND_URL, 
@@ -71,7 +72,7 @@ app.get('/callback', async (req, res) => {
       const accessToken = response.data.access_token;
   
       // 🎯 フロントエンドにリダイレクトして、トークンを渡す
-      res.redirect(`${ process.env.FRONTEND_URL }/playlists?access_token=${accessToken}`);
+      res.redirect(`${ FRONTEND_URL }/playlists?access_token=${accessToken}`);
   
     } catch (error) {
       console.error(error);

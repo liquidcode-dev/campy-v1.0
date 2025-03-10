@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import axios from "axios";
-import { Grid2 as Grid, Card, CardMedia, CardContent, Typography, CircularProgress, Alert, Button, styled } from "@mui/material";
+import { Grid, Card, CardMedia, CardContent, Typography, CircularProgress, Alert, Button, styled } from "@mui/material";
 
 const TrackInfo = styled(Typography)(() => ({
   fontFamily: 'Gabarito',
