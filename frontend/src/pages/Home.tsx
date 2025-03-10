@@ -39,7 +39,7 @@ const Home = () => {
         width: 259,
         height: 75,
         margin: '30px auto',
-        backgroundImage: 'url("./src/assets/img/spotify-bandcamp.png")',
+        backgroundImage: 'url("/img/spotify-bandcamp.png")',
         backgroundSize: "contain",
         backgroundRepeat: "no-repeat"
       }}>
