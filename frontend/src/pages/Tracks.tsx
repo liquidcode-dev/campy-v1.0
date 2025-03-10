@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 import { useParams, useNavigate, useLocation } from "react-router-dom";
 import axios from "axios";
-import { Grid, Card, CardMedia, CardContent, Typography, CircularProgress, Alert, Button, Checkbox, FormControlLabel, Box, styled } from "@mui/material";
+import  Grid  from "@mui/material/Grid2";
+import { Card, CardMedia, CardContent, Typography, CircularProgress, Alert, Button, Checkbox, FormControlLabel, Box, styled } from "@mui/material";
 
 const TrackInfo = styled(Typography)(() => ({
   fontFamily: 'Gabarito',
@@ -102,7 +103,7 @@ const Tracks = () => {
 
           <Grid container spacing={2} justifyContent="center" mt={3}>
             {tracks.map((track) => (
-              <Grid item xs={12} sm={6} md={4} key={track.title}>
+              <Grid size={{ xs:12, sm:6, md:4 }} key={track.title}>
                 <Card sx={{ width: "200px", backgroundColor: "#1f1f1f" }}>
                   <CardMedia component="img" height="200" image={track.imageUrl} alt={track.title} />
                   <CardContent sx={{ textAlign: "center" }}>
