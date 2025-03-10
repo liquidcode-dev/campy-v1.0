@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 import { useSearchParams, useNavigate } from "react-router-dom";
 import axios from "axios";
-import { Grid2 as Grid, Card, CardMedia, CardContent, Typography, CircularProgress, Alert, Box, styled } from "@mui/material";
+//import  Grid  from "@mui/material/Grid2";
+import { Grid, Card, CardMedia, CardContent, Typography, CircularProgress, Alert, styled } from "@mui/material";
 
 const PlaylistTitle = styled(Typography)(() => ({
   fontFamily: 'Gabarito',
@@ -67,7 +68,7 @@ const Playlists = () => {
       {!loading && !error && playlists.length > 0 && (
         <Grid container spacing={2} justifyContent="center" mt={5}>
           {playlists.map((playlist) => (
-            <Grid item xs={8} sm={3} md={1} key={playlist.id}>
+            <Grid xs={8} sm={3} md={1} key={playlist.id}>
               <Card onClick={() => navigate(`/tracks/${playlist.id}`)} sx={{ cursor: "pointer", width: "200px", backgroundColor: "#1f1f1f" }}>
                 <CardMedia component="img" height="200" image={playlist.imageUrl} alt={playlist.name} />
                 <CardContent>
