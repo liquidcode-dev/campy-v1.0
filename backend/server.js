@@ -122,7 +122,7 @@ app.get('/playlist/:playlistId/tracks', async (req, res) => {
       headers: { Authorization: `Bearer ${accessToken}` }
     });
 
-    // 🎯 必要な情報だけを返す（曲のカバー画像も追加！）
+    // 必要な情報だけを返す（曲のカバー画像も追加！）
     const tracks = response.data.tracks.items.map((item) => ({
       artist: item.track.artists[0].name,
       title: item.track.name,

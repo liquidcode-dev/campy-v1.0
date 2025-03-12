@@ -6,9 +6,7 @@ const Footer = styled(Box)(({ theme }) => ({
   margin: "0 auto",
   alignItems: 'center',
   justifyContent: "center",
-  padding: theme.spacing(2),
-  //backgroundColor: , // ヘッダーの背景色
-  //color: , // テキストの色
+  padding: theme.spacing(2)
 }));
 
 const FooterComponent = () => {
